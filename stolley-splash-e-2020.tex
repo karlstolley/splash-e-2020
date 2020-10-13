@@ -34,7 +34,7 @@
   \postcode{60616}}
 
 \begin{abstract}
-This course experience report details the teaching of Cascading Style Sheets (CSS) constrained by the rules of objective typography. The approach guides students in applying those rules to a subset of fewer than a dozen CSS properties. Students learn how to determine and reason about rule-governed values and ratios according to typographic principles. When successful, students produce typeset text that is accessible and readable across the range of screens and user-set preferences on web-enabled devices. Students learn to visually and mathematically verify the execution of their designs, and to apply the  rigor of objective typography to other areas of CSS, such as grid-based page layout. Experiential evidence suggests that these techniques do transfer to other aspects of CSS, but formal study is needed.
+This course experience report details the teaching of Cascading Style Sheets (CSS) constrained by the rules of objective typography. The approach guides students in applying those rules to a subset of fewer than a dozen CSS properties. Students learn how to determine and reason about rule-governed values and ratios according to typographic principles. When successful, students produce typeset text that is accessible and readable across the range of screens and user-set preferences on web-enabled devices. Students learn to visually and mathematically verify the execution of their designs, and to apply the rules of objective typography to other areas of CSS, such as grid-based page layout. Experiential evidence suggests that these techniques do transfer to other aspects of CSS, but formal study is needed.
 \end{abstract}
 
 \begin{CCSXML}
@@ -124,69 +124,68 @@ Applied to CSS instruction, objective typography offers a number of advantages:
   \item It establishes a core set of values and units that can be carried over into advanced layout methods and grid-based design
 \end{itemize}
 
-Teaching CSS constrained by objective typography is systematic but leaves open room for experimentation: Students work with both their own written copy and dummy {\itshape Lorem ipsum} text to determine a reasonable size for the body copy, initially expressed in absolute, pixels units. From there, students experiment with different values on the \verb|line-height| property to find an appropriate leading (pron. {\itshape ledding}) to separate the lines of running text. That value becomes the fundamental base-line grid for the page. Block elements (headings, paragraphs, lists and list items) can then be offset from one another with additional vertical space, based on the \verb|line-height| value. Students then convert those absolute values into relative values for greater accessibility. 
+Teaching CSS constrained by objective typography is systematic but leaves open room for experimentation: Students work with both their own written copy and dummy {\itshape Lorem ipsum} text to determine a reasonable size for the body copy, initially expressed in absolute, pixels units. [Something about the `html` selector.] From there, students experiment with different values on the \verb|line-height| property to find an appropriate leading (pron. {\itshape ledding}) to separate the lines of running text. That value becomes the fundamental base-line grid for the page. Block elements (headings, paragraphs, lists and list items) can then be offset from one another with additional vertical space, based on the \verb|line-height| value. Students then convert those absolute values into relative values for greater accessibility.
+
+[Combine with previous para] For the purposes of learning this technique, students can be provided with a semantically structured HTML document from the instructor, or they can work from their own HTML, perhaps as part of a larger project. The HTML should use the viewport \verb|<meta>| element to set mobile devices to display at their native resolutions.
+
+Because of the varying availability of typefaces on different operating systems, instructors should suggest a few web-available typefaces, such as from Google Fonts, for students to work with. Ideally, the candidate typefaces should have anatomical features that lend themselves to long-form reading: moderate stroke contrast, a large x-height, and pronounced ascenders and descenders \cite[p.~36]{jsm:owt}. The typefaces in Figure \ref{fig:bvos} all exhibit those features.
 
 \subsection{Viewports and Devices}
 
 
 Finally, students begin to open up the RDV to larger viewports and make targeted adjustments to their stylesheets, often using CSS media queries, to ensure an optimal text setting across a full range of device and viewport sizes.
 
-
-
-
-
 after applying a reset stylesheet, which effectively strips away all default browser styles \cite{em:rc}, students are shown how to work with a mobile-sized viewport. Students begin by working with the responsive design view (RDV) in a development browser such as Mozilla Firefox Developer Edition (Figure \ref{fig:rdv}). The RDV provides a precise readout of the viewport's scale, and prevents students from the common pitfall of always designing for the web at the maximum viewport size their computer can display. The viewport in the RDV should be collapsed to a size that approximates the dimensions of a mobile phone. Students need to be reminded of this often. Students should be shown how and encouraged to make use of a lightweight local web server, such as the \verb|http-server| package written for Node.js \cite{npm:http}, so that they can learn as early as possible to view projects in progress over the local network on actual mobile and tablet devices, not just their own chosen development browser. It is usually only when students look at their work on a phone that they begin to really grasp designing for the smallest screens first.
-
-
-Note that applying the fundamental principles of objective typography does not come close to fully exhausting the possibilities of CSS typography: the basic instructional approach excludes typographic flourishes and stylistic enhancements, especially font variants such as small caps, that can now be represented in stunning clarity on high-density displays.
-
-For the purposes of learning this technique, students can be provided with a semantically structured HTML document from the instructor, or they can work from their own HTML, perhaps as part of a larger project. The HTML should use the viewport \verb|<meta>| element to set mobile devices to display at their native resolutions.
-
-Because of the varying availability of typefaces on different operating systems, instructors should suggest a few web-available typefaces, such as from Google Fonts, for students to work with. Ideally, the candidate typefaces should have anatomical features that lend themselves to long-form reading: moderate stroke contrast, a large x-height, and pronounced ascenders and descenders \cite[p.~36]{jsm:owt}. The typefaces in Figure \ref{fig:bvos} all exhibit those features.
 
 \subsection{Sizing Body Type}
 
-Selecting an appropriate size for body type is the most critical step in the process, because that size value determines all of the other values that follow. While keeping critical eyes on both the RDV emulator and the mobile phone, students can begin to experiment discovering a suitable base font-size for the page.
+Selecting a readable size for body type is a critical step in the typesetting process, because that size value determines all of the other values that follow. While keeping critical eyes on their browser's RDV and their mobile phones, students experiment with discovering a suitable base \verb|font-size| value for the page.
 
-Students have been surprised to learn that there isn’t a universal readable-size value: because the optical size of a typeface (that is, its visible letterforms) differs from its body size (the invisible boxes around letterforms), as shown in Figure \ref{fig:bvos}, there is no universal readable-size value--only certain likely ranges of sizes, which must be carefully adjusted based on the unique characteristics of a given typeface.
+Students are typically surprised to learn that there isn’t a precise, universally readable size value. That is due in part to how typefaces are drawn: the optical size of a typeface (that is, its visible letterforms) differs from its body size (the invisible boxes around letterforms, which is what the \verb|font-size| property sets). That means that two typefaces set to the same exact \verb|font-size| value may nevertheless render at very different optical sizes [figure?]. For that reason, in lab assignments I will often require a specific typeface for students to use. However, for their major projects, students are responsible for choosing their own typefaces.
 
-\begin{figure}
-  \includegraphics[width=\linewidth]{bvos}
-  \caption{Comparison of body (top) versus optical (bottom) sizes on three typefaces: Fira Sans, Merriweather, and Lato. To match the optical size of Merriweather (center), Fira Sans (left) must be sized to 106\% of Merriweather's body size; Lato (right) to 110\%.} The top and bottom lines of each set represent the ascender and descender lines, respectively. The middle two lines illustrate the x-height.
-  \Description{A screenshot showing different visual sizes on three different typefaces, and their visually uniform size when adjusted.}
-  \label{fig:bvos}
-\end{figure}
+Regardless of the typeface to be sized, students are generally more confident and successful in this work when introduced to some additional constraints for sizing text, including common browser defaults and accessibility guidelines. By default, most desktop browsers set their base font-size to 16 pixels, which the latest version of the Web Content Accessibility Guidelines (WCAG) identifies as “a reasonable size to assume” \cite{w3c:wcag}. On the larger end of a starting range of sizes, the Lighthouse Guild, formerly the National Association for the Visually Handicapped, recommends a size range of 16 to 18 points while also noting the optical-size differences between typefaces \cite{lhg:mtl}. At approximately 1.333 CSS pixels per point, a workable range of values for the base font size runs from 16 to 24 pixels.
 
-
-But rather than try different size values in an unstudied way, students can scaffold text-sizing according to common defaults and accessibility guidelines. By default, most desktop browsers set their base font-size to sixteen pixels. A good reset stylesheet should not interfere with that default size. The latest version of the Web Content Accessibility Guidelines (WCAG) refrains from making any specific text-size prescriptions; the WCAG does, however, note that “the smallest font size used on major browsers for unspecified text would be a reasonable size to assume for the font,” and also that “point size should be obtained from the user agent, or calculated based on font metrics as the user agent does” \cite{w3c:wcag}.
-
-The Lighthouse Guild, formerly the National Association for Visually Handicapped, recommends a size range of 16 to 18 points, while noting the differences between typefaces\cite{lhg:mtl}. Although the ADA Standards are silent on text-sizing, the WCAG includes some suggested constraints for text sizing: Success Criteria 1.4.3 and 1.4.6 suggest a “large-scale” text size of 18 points for regular text and 14 points for bold text. Additionally, Success Criterion 1.4.4 calls for users to be able to resize text up to 200\% “without loss of content or functionality” \cite{w3c:wcag}, meaning that students can experiment with smaller sizes, provided that those sizes work when doubled: either by adjusting the value the stylesheet or using the zoom feature in their development browser.
-
-In introducing those values to students, it’s necessary to explain to students the conversion from points to pixels. While the pixel once represented both a physical and a logical unit, the W3C distinguishes between the physical pixels on a screen and logical reference pixels \cite[§~5.2]{w3c:values}, which may involve lighting multiple physical pixels on high-density displays. Values expressed as pixels, \verb|px|, in CSS are always reference pixels. One point is 1/72 of an inch, while CSS pixels are approximated as 1/96 of an inch, making 1 point roughly 1.333 CSS pixels. The range from 14 to 18 points can be therefore be expressed as a CSS-pixel range of roughly 19 to 24 pixels.
+I often find it useful at this point and throughout the process to remind students that pixel values are only temporary convenience values for use at the design stage, when sizing is still in flux. Eventually, as detailed in section 3.6 below, all pixel units will be converted to relative \verb|em| or \verb|rem| units, and therefore made responsive to users who set their browser's base font size to something other than the 16-pixel default.
 
 \subsection{Establishing the Baseline Grid}
 
-Typographic convention sets the baseline grid anywhere from 120\% to 180\% of the base font size for body text \cite[p.~92]{jsm:owt}. The ideal baseline grid for a page is determined both by the size of the body text as well as the width of the column. The number of words on a line of text in a column is known as the {\itshape measure}; a readable measure on a single column of text is often between 45 and 75 characters, including spaces \cite[pp. 26–27]{rb:style}. Smaller measures can be set closer than larger measures, so long as the space is doing its primary job: aiding the eye's movement comfortably from the end of one line of text to the beginning of the next.
+This is often the step, however, where students encounter a great deal of conceptual difficulty. Their experiences setting line-spacing in word processors, for example, seems to have trained them to think in terms of single- and double-spacing. The concept of setting a value on the CSS \verb|line-height| property in the same pixel units to produce a grid of baselines is very different, and often requires repeated classroom demonstrations in addition to specific feedback about the line-height value students choose on labs and projects.
 
-Pixel values for the \verb|line-height| that divide evenly into 2, 3, and 4 are convenient for  expressing half-, third-, and quarter-line adjustments between elements, especially for beginning students.
+Guiding principles again help students arrive at their baseline-grid value. Typographic convention sets the baseline grid anywhere from 120\% to 180\% of the base font size for body text \cite[p.~92]{jsm:owt}. The ideal baseline grid for a page is determined both by the size of the body text as well as the width of the column. The number of words on a line of text in a column is known as the {\itshape measure}; a readable measure on a single column of text is often between 45 and 75 characters, including spaces \cite[pp. 26–27]{rb:style}. Smaller measures can be set closer than larger measures, so long as the space is doing its primary job: aiding the eye's movement comfortably from the end of one line of text to the beginning of the next.
+
+In addition to those principles, students also benefit greatly from the aid of a diagnostic grid overlay such as can be provided by Basehold.it or using a simple piece of instructor-provided CSS and SVG \cite{basehold}. With lines showing the size of their chosen baseline grid, students can better visually confirm the accuracy of their baseline grid and how their type sits within it.
+
+I encourage students to choose values for the \verb|line-height| property that divide evenly into 2 and 4 for expressing half- and quarter-line adjustments between elements, as is described below in section 3.5. Students also must learn to switch their grid overlay on and off, because the presence of the diagnostic lines can make it more difficult for students to assess when they have arrived at a line-height value that is most comfortable for reading.
 
 \subsection{Sizing Accent Type}
 
 \begin{figure}
   \includegraphics[width=\linewidth]{rdv-narrow}
-  \caption{Text precisely set on a repeating baseline grid, with diagnostic grid lines shown.}
-  \Description{The larger-sized headline copy occupies multiple grid lines, while each line of paragraph copy occupies just a single line.}
+  \caption{Text precisely set on a repeating baseline grid, with diagnostic grid lines shown. The larger headline text occupies multiple grid lines, while each line of paragraph copy occupies just a single line.}
   \label{fig:rdv-narrow}
 \end{figure}
 
-The WCAG specification notes that “The 18 and 14 point sizes for roman texts are taken from the minimum size for large print (14pt) and the larger standard font size (18pt)” \cite{w3c:wcag}--“the larger standard font size” being derived, presumably, from the traditional typographers scale represented in the text-sizing drop-down menus of writing software (8, 9, 10, 11, 12, 14, 18, 24, 30, 36, 48, 60, 72, and 96 points).
+Up until this point, students have only been setting properties on the \verb|html| selector. With a base font-size and a repeating baseline grid value in hand, students are ready to make size adjustments to the text on their page, most often beginning with headings.
 
-Students should be encouraged to experiment with different mathematical ratios to determine a scale. A 4:3 ratio, for example, with a base font-size of 18px would include 10.13px, 13.503px, 18px, 23.994px, and so on.  To keep the base-line grid harmonious and functional, students need to adjust the \verb|line-height| property on text that is larger or substantially smaller than their base font-size, as shown in Figure \ref{fig:rdv-narrow}. Assuming a base font-size of 18px and a baseline grid of 22px, a heading set to 23.994px could be set comfortably on a gridline and a half (33px) or on a fully doubled gridline (44px).
+Without being offered guidance, student will naturally want to write arbitrarily larger sizes on the heading selectors in their stylesheets. A better, rule-governed approach is to encourage students to experiment with different mathematical ratios to determine a modular scale, also known as a typographic scale, for precisely incremented font sizes. Students report enjoying exploring modularscale.com and its simple controls for specifying a base font-size as well as one of a number of different ratios for resizing text \cite{modscale}.
+
+A 4:3 ratio, for example, with a base font-size of 18px would produce a typographic scale with the sizes 18px, 23.994px, 31.984px, and so on as shown in Figure \ref{fig:modscale}. Advanced students in particular can be confused by partial pixels, like 31.984, as only whole pixels can be lit. But it serves a good instructional reminder that pixel values are convenience values, which will later be converted to relative units. The browser will handle the rounding of either unit to whole-pixel values.
+
+To keep the base-line grid consistently sized relative to larger text, students need to adjust the \verb|line-height| property on text that is larger or substantially smaller than their base font size, as shown in Figure \ref{fig:rdv-narrow}. Assuming a base font-size of 18px and a baseline grid of 22px, a heading set to 23.994px could be set comfortably on a gridline and a half (33px) or on a fully doubled gridline (44px). As Figure \ref{fig:rdv-narrow} shows, the paragraph text continues to adhere to the grid, indicating that the gridline adjustment on the heading was correctly set.
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{modular-scale}
+  \caption{A 4:3 modular scale with an 18-pixel base font-size as shown on modularscale.com.}
+  \label{fig:modscale}
+\end{figure}
+
 
 \subsection{Refining the Grid}
 
 Having established a base font size, a baseline grid, and a typographic scale, students move on to adding grid-determined space around elements. Both the \verb|margin| and \verb|padding| properties in CSS are appropriate for this task, although \verb|padding| behaves more predictably than \verb|margin|, as CSS will collapse adjacent margin values under particular circumstances.
+
 An entire line of empty space can follow paragraph elements, as shown in Figure \ref{fig:rdv-narrow}, while list items can be separated by a half line of space. An additional half line of space set on the list itself ensures that a list will be followed by an entire line of empty space, just like paragraphs.
+
 Additional space, derived from the \verb|line-height| value for the typographic grid, can be added to the \verb|html| selector on its \verb|padding| property.
 
 \subsection{Relative Units and Responsiveness}
@@ -198,17 +197,23 @@ Additional space, derived from the \verb|line-height| value for the typographic 
   \label{fig:rdv-wide}
 \end{figure}
 
-Having inspected their work, including with the aid of a grid overlay such as can be provided by Basehold.it or using a simple piece of instructor-provided SVG, students can confirm the accuracy of their baseline grid and their ability to size and set type to it. Students should then begin to gradually convert their absolute pixel-values to relative em-values. Because browsers default to a 16-pixel em, students can convert their base \verb|font-size| by dividing by 16. So a 19-pixel \verb|font-size| is equivalent to \verb|1.1875em|.
+With a diagnostic grid overlay still displaying, students begin to gradually convert their absolute pixel-values to relative em-values. Because browsers default to a 16-pixel em, students convert their base \verb|font-size| by dividing by 16. So a 19-pixel \verb|font-size| is equivalent to \verb|1.1875em|.
 
-That value becomes the new em value for the page. If the 19-pixel text is set on a 24-pixel baseline, the relative \verb|line-height| value is arrived at by calculating 24/19, or \linebreak \verb|1.2631578947em|. With each conversion to a relative unit, students should refresh their  browsers and ensure their work still shows perfect alignment with the overlay . Any deviations from the grid means that a relative value was calculated incorrectly.
+That value becomes the new em value for the page. If the 19-pixel text is set on a 24-pixel baseline, the relative \verb|line-height| value is arrived at by calculating 24 ÷ 19, or \verb|1.2631578947em|. With each conversion to a relative unit, students should refresh their browsers and ensure their work still shows perfect alignment with the overlay . Any deviations from the grid means that a relative value was calculated incorrectly.
 
-With relative units uniformly in place, students can then begin to open up the RDV viewport further. Once the lines of text become too long to comfortably read, or exceed the recommended lengths for line measures referenced earlier, and adjustment is needed.
+This is another pain-point for some students, who race through their stylesheets and converting to em values without checking their work in the browser. In that situation, the student has to return to the stylesheet and do a great deal of value-checking to determine the source of the errors. I encourage students to always preserve their unit-conversions in CSS comments, which helps them to track down errors as well as keeping clear for themselves how their relative values were calculated.
 
-The primary mechanism for making adjustments are via CSS media queries, which conditionally apply their contained CSS based on a screen condition, such as \verb|min-width|. Students should use the width as displayed in the RDV to write the query. A media query may need only to introduce a larger \verb|font-size| set on the \verb|html| selector. All of the carefully determined ratios and size relationships will scale accordingly. Additional space to the left and right sides of the text column can also help keep the measure of the lines readable, as in Figure \ref{fig:rdv-wide}.
+With relative units accurately in place, students can then begin to open up the RDV viewport further. Once the lines of text become too long to comfortably read, or exceed the recommended lengths for line measures referenced earlier, and adjustment is needed. The primary mechanism for making adjustments are via CSS media queries, which conditionally apply their contained CSS based on a screen condition, such as \verb|min-width|. Students should use the width as displayed in the RDV to write the query. A media query may need only to introduce a larger \verb|font-size| set on the \verb|html| selector. All of the carefully determined ratios and size relationships will scale accordingly. Additional space to the left and right sides of the text column can also help keep the measure of the lines readable, as shown in Figure \ref{fig:rdv-wide}.
+
+ Additionally, WCAG Success Criterion 1.4.4 calls for users to be able to resize text up to 200\% “without loss of content or functionality” \cite{w3c:wcag}, meaning that students can experiment with smaller sizes, provided that those sizes work when doubled: either by adjusting the value the stylesheet or using the zoom feature in their development browser.
 
 \section{Conclusion}
 
-This approach to CSS instruction has proved challenging but rewarding for students. Instead of focusing on a growing number of properties, students learn to take their time arriving at very precise values for a select number of properties. Anecdotally, since employing this method, students generally seem much more adept at commanding more complex CSS modules later in the course, particularly CSS Flexible Boxes and CSS Grid, both of which feature a large number of interdependent properties.
+This approach to CSS instruction has proved challenging but rewarding for students. Instead of focusing on a growing number of properties, students learn to take their time arriving at very precise values for a select number of properties. The unique combination of typeface, font size, and line height makes cut-and-paste approaches to CSS unworkable. Students take ownership over their work, and not uncommonly express a great deal of pride when their work scales up with user-set font preferences in the browser. 
+
+Anecdotally, having employed this method, students generally seem much more adept at commanding additional complex CSS modules later in the course, particularly CSS Flexible Boxes and CSS Grid, which can be set to use the base line-height value from the student's initial typesetting.
+
+Note that applying the fundamental principles of objective typography does not come close to fully exhausting the possibilities of CSS typography: the basic instructional approach excludes typographic flourishes and stylistic enhancements, especially font variants such as small caps, that can now be represented in stunning clarity on high-density displays.
 
 \subsection{Planned Enhancements}
 
