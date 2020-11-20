@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+@import url('//basehold.it/24');
+
+
+
+/*
+  Setting type according to a 3:4 (Major Third) Modular Scale:
+  https://www.modularscale.com/?20&px&1.333
+
+  Base font-size: 20px // 1.25em ( 20 / 16)
+  Base line-height: 24px // 1.2em (24 / 20)
+*/
+
+html {
+  font-family: 'Crimson Text', 'Hoefler Text', Georgia, 'Times New Roman', Times, Roman, serif;
+}
+
+/* Headings */
+h1 {
+}
+h2 {
+}
+h3 {
+  font-weight: 600;
+}
+
+/* Paragraphs */
+p {
+}
+
+/* Lists */
+ul {
+  list-style-type: disc;
+}
+ul ul {
+  list-style-type: circle;
+}
+li {
+}
+ul ul,
+ul ul li {
+
+}
