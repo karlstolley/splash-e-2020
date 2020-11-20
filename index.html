@@ -49,31 +49,45 @@
     <section id="problem">
       <h3>Problem</h3>
       <ul>
-        <li>Compared to HTML and JavaScript, CSS is an unstructured free-for-all</li>
-        <li>
-          CSS instruction can devolve into a sight-seeing tour of properties and their
-          effects
-        </li>
-        <li>
-          Values for CSS properties are often selected without any reasoned
-          basis
-        </li>
+        <li>Where to start teaching CSS?</li>
+        <li>What values and units to use?</li>
+        <li>When is a stylesheet “finished”?</li>
       </ul>
     </section>
-    <section id="solutions">
-      <h3>Solutions</h3>
+    <section id="approach">
+      <h3>Method and Approach</h3>
       <ul>
         <li>
-          The rules of objective typography provide external, consistent constraints on a handful of
-          basic typographic properties
+          Introduce the rules of objective typography, applied to  a handful of basic typographic
+          properties
         </li>
         <li>
-          Students begin by assessing a typeface for its most readable size at a given viewport,
-          starting with mobile scales
+          Determine two baseline values: a <code>font-size</code> and a typographic grid via a
+          <code>line-height</code> value that is repeated throughout the stylesheet
         </li>
         <li>
-          Students then establish a typographic grid via a <code>line-height</code> value that is
-          repeated throughout the stylesheet
+          Establish a modular scale for making predictable adjustments to the
+          <code>font-size</code>, which often requires setting multiples or fractions of the base
+          <code>line-height</code>
+        </li>
+        <li>
+          Convert absolute, pixel values to accessible <code>em</code> values as the stylesheet
+          nears completion
+      </ul>
+    </section>
+    <section id="experiences">
+      <h3>Experiences</h3>
+      <ul>
+        <li>
+          Students need constant reminders and review about working from mobile-scale viewports
+          first
+        </li>
+        <li>
+          Students should be reminded that pixel values are placeholders
+        </li>
+        <li>
+          Students benefit from multiple demonstrations that reinforce the relationship and
+          difference between <code>font-size</code> and <code>line-height</code>
         </li>
       </ul>
     </section>
@@ -84,7 +98,7 @@
           Anecdotally, students are better prepared to implement more advanced CSS
         </li>
         <li>
-          Formal research and assessment is needed to objectively determine the approach’s efficacy
+          Formal research and assessment is needed to determine the approach’s efficacy
         </li>
       </ol>
     </section>
@@ -93,7 +107,18 @@
   <aside id="supporting">
     <h2 class="accessible-label">Supporting Content</h2>
     <section>
-      <h3>Examples</h3>
+      <h3>Instructional Context</h3>
+      <ul>
+        <li>
+          First of a two-course web sequence in an information technology &amp; management program
+        </li>
+        <li>Accessibility as a core engineering principle</li>
+        <li>Enrolls 30–40 students</li>
+        <li>Mix of lecture, live demonstrations, and project-based learning</li>
+      </ul>
+    </section>
+    <section>
+      <h3>Instructional Examples</h3>
       <a href="https://github.com/fwd-2020/week-05/blob/main/screen.css#L14">
         <figure id="source-example">
           <img src="assets/img/css-snippet.png" alt="Screen capture of CSS source code" />
@@ -102,19 +127,20 @@
       <ul>
         <li><a href="https://courses.stolley.co/fwd/">Course syllabus</a></li>
         <li>
-          <a href="https://fwd-2020.github.io/week-05/">Live instructional example</a>
+          <a href="https://fwd-2020.github.io/week-05/">Web-available instructional example</a>
         </li>
         <li>
-          <a href="https://github.com/fwd-2020/week-05">Instructional example GitHub repository</a>
+          <a href="https://github.com/fwd-2020/week-05">Instructional example’s GitHub repository</a>
         </li>
         <li>
-          <a href="https://www.youtube.com/watch?v=VDTfjCvuB34&t=1634s">Course video of the example</a>
+          <a href="https://www.youtube.com/watch?v=VDTfjCvuB34&t=1634s">Class video of the live-coded example</a>
         </li>
       </ul>
     </section>
     <section>
       <h3>Resources</h3>
       <ul>
+        <li><a href="https://meyerweb.com/eric/tools/css/reset/">Eric Meyer Reset CSS</a></li>
         <li><a href="https://basehold.it/">Basehold.it</a></li>
         <li><a href="https://www.modularscale.com/">Modular Scale</a></li>
       </ul>
