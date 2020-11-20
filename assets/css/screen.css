@@ -292,7 +292,7 @@ section {
     grid-column: 1 / 6;
     display: grid;
     grid-template-columns: 2fr 3fr;
-    grid-gap: 24px;
+    grid-gap: 36px;
   }
   .finding {
     padding-top: 0;
