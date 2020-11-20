@@ -9,13 +9,17 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 
 /* Begin site styles below */
 :root {
-  --base-color: #c13b0f;
+  --base-color: #800c21;
+  --accent-color: #DBD21A;
+  --secondary-color: #116A8F;
 }
 /* Base */
 html {
   font-family: "Lato", Trebuchet, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 18px;
   line-height: 24px;
+  background: #111;
+  color: #EEE;
 }
 h1, h2, h3 {
   font-size: 27px;
@@ -41,7 +45,7 @@ ul:not([class]) {
 }
 a,a:active,a:visited {
   text-decoration: none;
-  color: var(--base-color);
+  color: var(--accent-color);
 }
 /* Responsive Images */
 img {
@@ -69,9 +73,12 @@ img {
 section {
   padding-bottom: 24px;
 }
+#supporting {
+  color: var(--secondary-color);
+}
 #supporting li {
   padding-bottom: 12px;
-  color: var(--base-color);
+  color: var(--accent-color);
 }
 #author ul {
   list-style-type: none;
@@ -121,7 +128,7 @@ section {
   text-align: center;
 }
 #footer h2 a {
-  color: #222;
+  color: var(--accent-color);
 }
 .logo img {
   max-width: 250px;
@@ -329,7 +336,7 @@ section {
 }
 
 .g body::after {
-  background: url('data:image/svg+xml;utf8,<svg height="12" width="1" xmlns="http://www.w3.org/2000/svg"><rect width="1" height="0.5" style="fill:rgba(0, 0, 0, 0.3)" /></svg>') repeat top left;
+  background: url('data:image/svg+xml;utf8,<svg height="12" width="1" xmlns="http://www.w3.org/2000/svg"><rect width="1" height="0.5" style="fill:rgba(255, 255, 255, 0.3)" /></svg>') repeat top left;
   content: "";
   display: block;
   pointer-events: none;
