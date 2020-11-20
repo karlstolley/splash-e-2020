@@ -47,6 +47,11 @@ a,a:active,a:visited {
   text-decoration: none;
   color: var(--accent-color);
 }
+code {
+  font-family: Menlo, Monaco, "Lucida Console", "Courier New", Courier, monospace;
+  color: #AAA;
+  font-size: 0.94em;
+}
 /* Responsive Images */
 img {
   display: block;
@@ -79,6 +84,9 @@ section {
 #supporting li {
   padding-bottom: 12px;
   color: var(--accent-color);
+}
+#supporting a {
+  border-bottom: 1px dotted #EEE;
 }
 #author ul {
   list-style-type: none;
