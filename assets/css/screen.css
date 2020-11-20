@@ -30,7 +30,7 @@ h1 {
   padding-bottom: 6px;
 }
 h2, h3 {
-  padding-bottom: 12px;
+  padding-bottom: 6px;
 }
 
 ol:not([class]), ul:not([class]) {
@@ -71,7 +71,7 @@ img {
   background: var(--base-color);
 }
 section {
-  padding-bottom: 24px;
+  padding-bottom: 18px;
 }
 #supporting {
   color: var(--secondary-color);
@@ -269,6 +269,9 @@ section {
     grid-column: 3 / 6;
     grid-row: 1 / 2;
     background: var(--base-color);
+  }
+  #poster > * {
+    padding: 12px 24px 12px 30px;
   }
   #header,
   #details {
